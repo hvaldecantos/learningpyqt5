@@ -1,0 +1,21 @@
+participant: 1
+pretest:
+- t
+- f
+- dk
+- dk
+- t
+- t
+- t
+- f
+- dk
+- dk
+- t
+system example:
+- library
+- spell
+task:
+- 2
+- 4
+- 3
+warmup: true
