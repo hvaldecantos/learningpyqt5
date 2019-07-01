@@ -1,5 +1,5 @@
 # This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
+# $ conda create --name learningpyqt5 --file windows10-explicit-env.txt
 # platform: win-64
 @EXPLICIT
 https://repo.anaconda.com/pkgs/main/win-64/ca-certificates-2019.5.15-0.tar.bz2

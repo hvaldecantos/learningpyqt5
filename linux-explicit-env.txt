@@ -1,5 +1,5 @@
 # This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
+# $ conda create --name learningpyqt5 --file linux-explicit-env.txt
 # platform: linux-64
 @EXPLICIT
 https://repo.anaconda.com/pkgs/main/linux-64/ca-certificates-2019.5.15-0.tar.bz2
