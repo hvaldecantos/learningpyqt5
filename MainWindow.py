@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
+cwd = os.getcwd()
+
 
 def format(color, style=''):
     """Return a QTextCharFormat with the given attributes."""
@@ -108,7 +110,7 @@ class App(QMainWindow):
         self.filenames = []
         self.lambdas = []
         i = 0
-        for filename in os.listdir('C:/Users/harri/CS211 Labs/217_hklein2_P5'):
+        for filename in os.listdir(cwd + '\\ExampleProgramCode'):
             self.filenames.append(filename)
             self.files.append(QPushButton(self.filenames[i]))
             self.lambdas.append(self.build_lambda(self.files[i]))
@@ -122,7 +124,7 @@ class App(QMainWindow):
         self.show()
 
     def change_file(self, button):
-        self.label.setText(open('C:/Users/harri/CS211 Labs/217_hklein2_P5/' + self.filenames[self.files.index(button)], "r").read())
+        self.label.setText(open(cwd + '\\ExampleProgramCode\\' + self.filenames[self.files.index(button)], "r").read())
 
     def build_lambda(self, button):
         return lambda: self.change_file(button)
