@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QMainWindow, QAction
+from PyQt5.QtGui import QIcon
 
 class MainWindow(QtWidgets.QWidget):
 
@@ -27,7 +28,7 @@ class MainWindow(QtWidgets.QWidget):
 
 class WindowTwo(QtWidgets.QWidget):
 
-    switch_window = QtCore.pyqtSignal(str)
+    switch_window = QtCore.pyqtSignal()
 
     def __init__(self, text):
         QtWidgets.QWidget.__init__(self)
@@ -71,7 +72,7 @@ class WindowThree(QMainWindow):
         toolsMenu = mainMenu.addMenu('Tools')
         helpMenu = mainMenu.addMenu('Help')
         
-        exitButton = QAction(QIcon('exit24.png'), 'Exit', self)
+        exitButton = QAction(QIcon('exit.png'), 'Exit', self)
         exitButton.setShortcut('Ctrl+Q')
         exitButton.setStatusTip('Exit application')
         exitButton.triggered.connect(self.close)
