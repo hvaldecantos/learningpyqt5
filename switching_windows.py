@@ -32,17 +32,21 @@ class MainWindow(QMainWindow):
         self.setGeometry(self.left, self.top, self.width, self.height)
         self.centerOnScreen()
         
+        self.statusBar().showMessage('Message in statusbar.')
+
         self.setupExperimentMenu() # it does not increment the height
         self.show()
 
     def setupExperimentMenu(self):
         experimentMenu = QMenu("&Experiment", self)
         self.menuBar().addMenu(experimentMenu)
-
+        experimentMenu.hovered.connect(self.menu_hovered)
         experimentMenu.addAction("&Start...", self.startExperiment, "Ctrl+S")
         experimentMenu.addAction("&Open experiment...", self.openFile, "Ctrl+O")
         experimentMenu.addAction("Save and E&xit", self.exitExperiment, "Ctrl+Q")
 
+    def menu_hovered(self, action):
+        print(action)
     def startExperiment(self):
         print("startExperiment")
         self.switch_window.emit("Comes from main window")
