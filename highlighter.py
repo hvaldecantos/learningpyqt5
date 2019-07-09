@@ -76,7 +76,7 @@ class MainWindow(QMainWindow):
         self.setupFileMenu()
         self.setupHelpMenu()
         self.setupEditor()
-
+        self.openFile("./cppexample.cpp")
         self.setCentralWidget(self.editor)
         self.setWindowTitle("Syntax Highlighter")
         # self.setWindowFlags(Qt.CustomizeWindowHint) # removes frames
@@ -92,10 +92,11 @@ class MainWindow(QMainWindow):
         self.editor.clear()
 
     def openFile(self, path=None):
+        print(path)
         if not path:
             path, _ = QFileDialog.getOpenFileName(self, "Open File", '',
                     "C++ Files (*.cpp *.h)")
-
+        print(path)
         if path:
             inFile = QFile(path)
             if inFile.open(QFile.ReadOnly | QFile.Text):
