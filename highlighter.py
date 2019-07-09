@@ -79,7 +79,6 @@ class MainWindow(QMainWindow):
         self.openFile("./cppexample.cpp")
         self.setCentralWidget(self.editor)
         self.setWindowTitle("Syntax Highlighter")
-        # self.setWindowFlags(Qt.CustomizeWindowHint) # removes frames
 
     def about(self):
         QMessageBox.about(self, "About Syntax Highlighter",
